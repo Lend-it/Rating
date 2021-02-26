@@ -1,0 +1,27 @@
+version: '3.6'
+services:
+  boiler:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    volumes:
+      - '.:/app'
+    ports:
+      - 5001:5000
+    environment:
+      - FLASK_ENV=development
+      - APP_SETTINGS=project.config.DevelopmentConfig
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/boiler_dev
+      - DATABASE_TEST_URL=postgres://postgres:postgres@db:5432/boiler_test
+    depends_on:
+        - db
+
+  db:
+    build:
+      context: ./project/db
+      dockerfile: Dockerfile
+    ports:
+      - 5106:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
