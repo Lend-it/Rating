@@ -1,6 +1,6 @@
 version: '3.6'
 services:
-  boiler:
+  rating:
     build:
       context: .
       dockerfile: Dockerfile-dev
@@ -11,8 +11,8 @@ services:
     environment:
       - FLASK_ENV=development
       - APP_SETTINGS=project.config.DevelopmentConfig
-      - DATABASE_URL=postgres://postgres:postgres@db:5432/boiler_dev
-      - DATABASE_TEST_URL=postgres://postgres:postgres@db:5432/boiler_test
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/rating_dev
+      - DATABASE_TEST_URL=postgres://postgres:postgres@db:5432/rating_test
     depends_on:
         - db
 

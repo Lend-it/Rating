@@ -1,3 +1,3 @@
-CREATE DATABASE boiler_prod;
-CREATE DATABASE boiler_dev;
-CREATE DATABASE boiler_test;
+CREATE DATABASE rating_prod;
+CREATE DATABASE rating_dev;
+CREATE DATABASE rating_test;
