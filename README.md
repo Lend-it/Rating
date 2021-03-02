@@ -6,8 +6,17 @@ Microsserviço responsável pelo sistema de feedbacks para os usuários da aplic
 
 Com o Docker e Docker-Compose instalados, basta apenas utilizar os comandos:
 
+1. Build
 ```shell
-    sudo docker-compose -f docker-compose-dev.yml up --build
+    make build
+```
+2. Executar
+```shell
+    make run
+```
+2.1 Executar em background
+```shell
+    make run-silent
 ```
 
 ## Rodando os testes
@@ -15,5 +24,5 @@ Com o Docker e Docker-Compose instalados, basta apenas utilizar os comandos:
 Com o Docker e Docker-Compose instalados, basta apenas utilizar os comandos:  
 
 ```shell
-    sudo docker-compose -f docker-compose-dev.yml run rating python manage.py test
+    make test
 ```
