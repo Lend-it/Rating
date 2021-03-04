@@ -1,0 +1,20 @@
+name: Application Test
+
+on: push
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Build application
+      run: docker-compose -f docker-compose.dev.yml build
+      
+    - name: Run application
+      run: docker-compose -f docker-compose.dev.yml up -d
+      
+    - name: Run tests
+      run: docker-compose -f docker-compose.dev.yml run rating python manage.py test
