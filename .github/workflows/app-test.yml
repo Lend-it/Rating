@@ -17,4 +17,4 @@ jobs:
       run: docker-compose -f docker-compose.dev.yml up -d
       
     - name: Run tests
-      run: docker-compose -f docker-compose.dev.yml run request python manage.py test
+      run: docker-compose -f docker-compose.dev.yml run rating python manage.py test
