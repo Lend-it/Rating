@@ -2,9 +2,10 @@
 
 Microsserviço responsável pelo sistema de feedbacks para os usuários da aplicação.
 
+Todos os comandos abaixo requerem a instalação de Docker e Docker-Compose.
+
 ## Colocando no ar
 
-Com o Docker e Docker-Compose instalados, basta apenas utilizar os comandos:
 
 1. Build
 ```shell
@@ -18,11 +19,20 @@ Com o Docker e Docker-Compose instalados, basta apenas utilizar os comandos:
 ```shell
     make run-silent
 ```
+2.3 Buildar e executar
+```shell
+    make run-build
+```
 
 ## Rodando os testes
 
-Com o Docker e Docker-Compose instalados, basta apenas utilizar os comandos:  
 
 ```shell
     make test
+```
+
+## Acessando o banco de dados 
+
+```shell
+    make db
 ```

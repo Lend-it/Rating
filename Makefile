@@ -9,3 +9,12 @@ run-silent:
 
 test:
 	sudo docker-compose -f docker-compose.dev.yml run rating python manage.py test
+
+run-build:
+	sudo docker-compose -f docker-compose.dev.yml up --build
+
+db:
+	sudo docker-compose -f docker-compose.dev.yml exec db psql -U postgres
+
+down:
+	sudo docker-compose -f docker-compose.dev.yml down
