@@ -11,17 +11,17 @@ services:
     environment:
       - FLASK_ENV=development
       - APP_SETTINGS=project.config.DevelopmentConfig
-      - DATABASE_URL=postgres://postgres:postgres@db:5432/rating_dev
-      - DATABASE_TEST_URL=postgres://postgres:postgres@db:5432/rating_test
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/ratelenditdb_dev
+      - DATABASE_TEST_URL=postgres://postgres:postgres@db:5432/ratelenditdb_test
     depends_on:
         - db
 
   db:
-    build:
-      context: ./project/db
-      dockerfile: Dockerfile
+    image: postgres:13.2-alpine
     ports:
-      - 5106:5432
+      - 5107:5432
+    volumes:
+      - ./project/db:/docker-entrypoint-initdb.d
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
