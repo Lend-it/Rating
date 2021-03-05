@@ -19,7 +19,7 @@ Todos os comandos abaixo requerem a instalação de Docker e Docker-Compose.
 ```shell
     make run-silent
 ```
-2.3 Buildar e executar
+2.2 Buildar e executar
 ```shell
     make run-build
 ```
