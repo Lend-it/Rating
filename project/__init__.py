@@ -2,6 +2,7 @@ import os
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from database_singleton import Singleton
+from project.api.views import test_blueprint
 
 # instantiate the app
 def create_app(script_info=None):
@@ -17,6 +18,8 @@ def create_app(script_info=None):
 
     db.init_app(app)
     migrate.init_app(app, db)
+
+    app.register_blueprint(test_blueprint)
 
     @app.shell_context_processor
     def ctx():
