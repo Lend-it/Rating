@@ -24,7 +24,7 @@ CREATE TABLE RATE (
     rateId UUID NOT NULL,
     stars REAL NOT NULL,
     review TEXT DEFAULT '',
-    repport BOOLEAN NULL,
+    report BOOLEAN NULL,
     reviewed TEXT NOT NULL,
     reviewer TEXT NOT NULL,
     requestId UUID NOT NULL,

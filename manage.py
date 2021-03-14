@@ -28,7 +28,5 @@ def test():
     return 1
 
 
-# docker-compose -f docker-compose-dev.yml run boiler python manage.py test
-
 if __name__ == "__main__":
     cli()
