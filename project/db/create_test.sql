@@ -23,7 +23,7 @@ CREATE DATABASE rateLendItDB_test
 CREATE TABLE RATE (
     rateId UUID NOT NULL,
     stars REAL NOT NULL,
-    review TEXT NOT NULL,
+    review TEXT DEFAULT '',
     repport BOOLEAN NULL,
     reviewed TEXT NOT NULL,
     reviewer TEXT NOT NULL,
