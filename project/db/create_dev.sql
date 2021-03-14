@@ -27,6 +27,7 @@ CREATE TABLE RATE (
     repport BOOLEAN NULL,
     reviewed TEXT NOT NULL,
     reviewer TEXT NOT NULL,
+    requestId UUID NOT NULL,
 
     CONSTRAINT RATE_PK PRIMARY KEY (rateId),
 
