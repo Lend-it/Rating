@@ -4,7 +4,7 @@ FROM python:3.8.0-alpine
 # new
 # install dependencies
 RUN apk update && \
-    apk add --virtual build-deps gcc python-dev musl-dev && \
+    apk add --virtual build-deps gcc g++ python-dev musl-dev && \
     apk add postgresql-dev && \
     apk add netcat-openbsd
 
