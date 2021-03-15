@@ -4,6 +4,10 @@ Microsserviço responsável pelo sistema de feedbacks para os usuários da aplic
 
 Todos os comandos abaixo requerem a instalação de Docker e Docker-Compose.
 
+*** 
+**[Disponível na porta 5001.](http://localhost:5001/)**
+***
+
 ## Colocando no ar
 
 
@@ -23,6 +27,10 @@ Todos os comandos abaixo requerem a instalação de Docker e Docker-Compose.
 ```shell
     make run-build
 ```
+3. Desativar o container
+```shell
+    make down
+```
 
 ## Rodando os testes
 
@@ -34,5 +42,11 @@ Todos os comandos abaixo requerem a instalação de Docker e Docker-Compose.
 ## Acessando o banco de dados 
 
 ```shell
-    make db
+    make check-db
+```
+
+## Rodar o linter no código (Black) 
+
+```shell
+    make lint
 ```
