@@ -5,3 +5,4 @@ Flask-Testing
 Flask-Migrate
 black
 gunicorn
+sqlalchemy

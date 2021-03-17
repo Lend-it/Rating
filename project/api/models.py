@@ -21,3 +21,13 @@ class Rate(db.Model):
         self.report = report
         self.reviewed = reviewed
         self.reviewer = reviewer
+
+    def to_json(self):
+        return {
+            "rateid": self.rateid,
+            "stars": self.stars,
+            "review": self.review,
+            "report": self.report,
+            "reviewed": self.reviewed,
+            "reviewer": self.reviewer,
+        }
