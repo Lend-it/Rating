@@ -6,3 +6,4 @@ Flask-Migrate
 black
 gunicorn
 sqlalchemy
+coverage

@@ -24,3 +24,6 @@ recreate-db:
 
 lint:
 	sudo docker-compose -f docker-compose.dev.yml run rating black . 
+
+cov:
+	sudo docker-compose -f docker-compose.dev.yml run rating python manage.py cov   
