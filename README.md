@@ -47,6 +47,13 @@ Todos os comandos abaixo requerem a instalação de Docker e Docker-Compose.
     make test
 ```
 
+## Rodando a cobertura dos testes
+
+
+```shell
+    make cov
+```
+
 ## Acessando o banco de dados 
 
 ```shell
