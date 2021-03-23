@@ -2,4 +2,8 @@ Flask
 Flask-SQLAlchemy
 psycopg2-binary
 Flask-Testing
-flask_migrate
+Flask-Migrate
+black
+gunicorn
+sqlalchemy
+coverage

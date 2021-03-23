@@ -40,7 +40,7 @@ class TestProductionConfig(TestCase):
         return app
 
     def test_app_is_production(self):
-        elf.assertTrue(app.config["SECRET_KEY"] == "my_precious")
+        self.assertTrue(app.config["SECRET_KEY"] == "my_precious")
         self.assertFalse(app.config["TESTING"])
 
 
