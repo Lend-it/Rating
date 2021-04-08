@@ -1,6 +1,6 @@
 SHELL := /bin/bash # Use bash syntax
 CURRENT_DIR := $(shell pwd)
-RUNNING_NETWORK := $(shell sudo docker network ls -f name=lendit | grep lendit )
+RUNNING_NETWORK := $(shell sudo docker network ls -f name=lendit_gateway | grep lendit_gateway )
 
 
 build:
