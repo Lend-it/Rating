@@ -1,9 +1,7 @@
 from flask import Blueprint, jsonify, request
-
 from sqlalchemy import exc
-
 from project.api.models import Rate
-from project import db
+from project.api.models import db
 
 test_blueprint = Blueprint("tasks", __name__)
 

@@ -1,8 +1,7 @@
 from flask_testing import TestCase
 from project import create_app
-from database_singleton import Singleton
+from project.api.models import db
 
-db = Singleton().database_connection()
 app = create_app()
 
 

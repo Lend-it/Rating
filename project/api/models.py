@@ -1,8 +1,8 @@
-from database_singleton import Singleton
+from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.dialects.postgresql import UUID
 import uuid
 
-db = Singleton().database_connection()
+db = SQLAlchemy()
 
 
 class Rate(db.Model):
