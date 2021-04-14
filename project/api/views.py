@@ -5,6 +5,7 @@ from project.api.models import db
 
 rate_blueprint = Blueprint("tasks", __name__)
 
+
 @rate_blueprint.route("/rating", methods=["POST"])
 def add_rating():
     post_data = request.get_json()
