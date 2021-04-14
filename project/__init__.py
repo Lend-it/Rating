@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from project.api.views import test_blueprint
+from project.api.views import rate_blueprint
 
 migrate = Migrate()
 
@@ -20,7 +20,7 @@ def create_app(script_info=None):
     db.init_app(app)
     migrate.init_app(app, db)
 
-    app.register_blueprint(test_blueprint)
+    app.register_blueprint(rate_blueprint)
 
     @app.shell_context_processor
     def ctx():
