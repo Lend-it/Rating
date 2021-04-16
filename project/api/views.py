@@ -49,7 +49,7 @@ def add_rating():
 @rate_blueprint.route("/rating", methods=["GET"])
 def get_all_rates():
     response = {
-        "status": "sucess",
+        "status": "success",
         "data": {"rates": [rate.to_json() for rate in Rate.query.all()]},
     }
     return jsonify(response), 200
