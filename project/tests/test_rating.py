@@ -81,12 +81,7 @@ class TestRating(BaseTestCase):
 
     def teste_get_all_rates(self):
         add_rate(
-            FAKE_STARS,
-            FAKE_REVIEW,
-            False,
-            FAKE_REVIEWED,
-            FAKE_REVIEWER,
-            FAKE_REQUESTID
+            FAKE_STARS, FAKE_REVIEW, False, FAKE_REVIEWED, FAKE_REVIEWER, FAKE_REQUESTID
         )
         if self.client:
             response = self.client.get(RATE_BASE_URL)
