@@ -3,9 +3,15 @@ import unittest
 from project.tests.base import BaseTestCase
 from project.api.models import Rate
 from project.api.models import db
+from project.tests.utils import add_rate
 
 RATE_BASE_URL = "/rating"
 CONTENT_TYPE = "application/json"
+FAKE_STARS = 3
+FAKE_REVIEW = "Capotou meu corsa"
+FAKE_REVIEWED = "maia@email.com"
+FAKE_REVIEWER = "vinicius@email.com"
+FAKE_REQUESTID = "c6554f6d-13b3-4aa5-aae2-d564fe4d9bac"
 
 
 class TestRating(BaseTestCase):
@@ -72,3 +78,16 @@ class TestRating(BaseTestCase):
             self.assertEqual(response.status_code, 400)
             self.assertIn("Invalid payload.", data["message"])
             self.assertIn("fail", data["status"])
+
+    def teste_get_all_rates(self):
+        add_rate(
+            FAKE_STARS, FAKE_REVIEW, False, FAKE_REVIEWED, FAKE_REVIEWER, FAKE_REQUESTID
+        )
+        if self.client:
+            response = self.client.get(RATE_BASE_URL)
+            data = json.loads(response.data.decode())
+
+            self.assertEqual(response.status_code, 200)
+            self.assertIn("success", data["status"])
+
+            self.assertEqual(len(data["data"]["rates"]), 1)

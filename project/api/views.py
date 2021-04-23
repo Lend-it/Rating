@@ -44,3 +44,12 @@ def add_rating():
     except exc.IntegrityError as e:
         db.session.rollback()
         return jsonify(error_response), 400
+
+
+@rate_blueprint.route("/rating", methods=["GET"])
+def get_all_rates():
+    response = {
+        "status": "success",
+        "data": {"rates": [rate.to_json() for rate in Rate.query.all()]},
+    }
+    return jsonify(response), 200
