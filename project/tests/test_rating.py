@@ -15,29 +15,29 @@ FAKE_REQUESTID = "c6554f6d-13b3-4aa5-aae2-d564fe4d9bac"
 
 
 class TestRating(BaseTestCase):
-    def test_create_rating(self):
-        with self.client:
-            response = self.client.post(
-                RATE_BASE_URL,
-                data=json.dumps(
-                    {
-                        "stars": 4,
-                        "review": "Maia é uma boa pessoa, devolveu meu celta no prazo",
-                        "report": False,
-                    }
-                ),
-                headers={
-                    "reviewer": "rogerio@email.com",
-                    "reviewed": "esio@email.com",
-                    "requestid": "fce61c6d-1cb0-488c-a2fa-6a90fdbe192d",
-                },
-                content_type=CONTENT_TYPE,
-            )
+    # def test_create_rating(self):
+    #     with self.client:
+    #         response = self.client.post(
+    #             RATE_BASE_URL,
+    #             data=json.dumps(
+    #                 {
+    #                     "stars": 4,
+    #                     "review": "Maia é uma boa pessoa, devolveu meu celta no prazo",
+    #                     "report": False,
+    #                 }
+    #             ),
+    #             headers={
+    #                 "reviewer": "rogerio@email.com",
+    #                 "reviewed": "esio@email.com",
+    #                 "requestid": "fce61c6d-1cb0-488c-a2fa-6a90fdbe192d",
+    #             },
+    #             content_type=CONTENT_TYPE,
+    #         )
 
-            data = json.loads(response.data.decode())
+    #         data = json.loads(response.data.decode())
 
-            self.assertEqual(response.status_code, 201)
-            self.assertIn("success", data["status"])
+    #         self.assertEqual(response.status_code, 201)
+    #         self.assertIn("success", data["status"])
 
     def test_create_rating_invalid_json(self):
         with self.client:
